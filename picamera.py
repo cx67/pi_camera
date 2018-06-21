@@ -22,7 +22,7 @@ def takeVideo(eventData):
     camera.wait_recording(10)
     camera.stop_recording()
 
-    print("OK");
+    print("OK")
     # At this point my_file.flush() has been called, but the file has
     # not yet been closed
     my_file.close()
