@@ -3,16 +3,11 @@ from pyparticleio.ParticleCloud import ParticleCloud
 import picamera, datetime, time
 from time import strftime
 
-#username = "mattvlaw@gmail.com"
-#password = "s-tech123~"
-#particle_cloud = ParticleCloud(username, password)
 access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
 particle_cloud = ParticleCloud(username_or_access_token=access_token)
 #all_devices = particle_cloud.devices
 #for device in all_devices:
     # make array if we want to loop through all devices
-
-particle_cloud.quit.subscribe(“doorOpen”,takeVideo)
 
 def takeVideo():
     #date to string
@@ -33,3 +28,5 @@ def takeVideo():
     # At this point my_file.flush() has been called, but the file has
     # not yet been closed
     my_file.close()
+
+particle_cloud.quit.subscribe("doorOpen",(takeVideo))
