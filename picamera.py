@@ -4,7 +4,7 @@ import picamera, datetime, time
 from time import strftime
 
 access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
-particle_cloud = ParticleCloud(username_or_access_token=access_token)
+particle_cloud = ParticleCloud(access_token)
 
 def takeVideo(eventData):
     print("it's working")
