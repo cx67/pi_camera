@@ -33,7 +33,7 @@ def takeVideo():
     # not yet been closed
     my_file.close()
 
-particle_cloud.quit.subscribe("doorOpen",(takeVideo()))
+particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
 while(true):
     time.sleep(100)
