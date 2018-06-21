@@ -36,4 +36,4 @@ def takeVideo():
 particle_cloud.quit.subscribe("doorOpen",(takeVideo()))
 
 while(true):
-    sleep(100)
+    time.sleep(100)
