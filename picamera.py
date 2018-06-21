@@ -5,9 +5,6 @@ from time import strftime
 
 access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
 particle_cloud = ParticleCloud(username_or_access_token=access_token)
-#all_devices = particle_cloud.devices
-#for device in all_devices:
-    # make array if we want to loop through all devices
 
 def takeVideo(eventData):
     print("it's working")
