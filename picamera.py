@@ -12,7 +12,7 @@ particle_cloud = ParticleCloud(username_or_access_token=access_token)
 #for device in all_devices:
     # make array if we want to loop through all devices
 
-def takeVideo():
+def takeVideo(eventData):
     print("it's working")
     #date to string
     date1 = datetime.datetime.now()
@@ -35,5 +35,5 @@ def takeVideo():
 
 particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
-while(true):
+while(True):
     time.sleep(100)
