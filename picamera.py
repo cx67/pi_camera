@@ -10,7 +10,7 @@ def takeVideo(eventData):
     print("it's working")
     #date to string
     date1 = datetime.datetime.now()
-    datestring = date1.strftime("%m-%d-%Y-%H:%M")
+    datestring = date1.strftime("%m-%d-%Y-%H%M%S")
 
     #make file
     my_file = open(datestring+'.h264', 'wb')
