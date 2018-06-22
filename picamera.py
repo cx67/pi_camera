@@ -18,6 +18,7 @@ def takeVideo(eventData):
     #take video
     camera = picamera.PiCamera()
     camera.resolution = (640, 480)
+    print("camera working!!!")
     camera.start_recording(datestring+'.h264')
     camera.wait_recording(10)
     camera.stop_recording()
