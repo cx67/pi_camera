@@ -27,6 +27,7 @@ def takeVideo(eventData):
     # At this point my_file.flush() has been called, but the file has
     # not yet been closed
     my_file.close()
+    camera.close()
 
 particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
