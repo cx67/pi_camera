@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pyparticleio.ParticleCloud import ParticleCloud
-import picamera, datetime, time
+import picamera, datetime, time, shutil
 from time import strftime
 
 access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
