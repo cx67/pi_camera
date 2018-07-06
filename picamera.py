@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pyparticleio.ParticleCloud import ParticleCloud
-import picamera, datetime, time, shutil
+import picamera, datetime, time, os.path
 from time import strftime
 
 access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
@@ -12,7 +12,8 @@ def takeVideo(eventData):
     datestring = date1.strftime("%m-%d-%Y-%H%M%S")
 
     #make file
-    my_file = open(datestring+'.h264', 'wb')
+    data_folder = os.path.join("home", "pi","ShareBoxVideos")
+    my_file = open(data_folder+datestring+'.h264', 'wb')
 
     #take video
     camera = picamera.PiCamera()
@@ -26,8 +27,9 @@ def takeVideo(eventData):
     my_file.close()
     camera.close()
     
-    # Move file to folder
-    shutil.move(('/home/pi/'+datestring+'.h264'), '/home/pi/ShareBoxVideos/'+datestring+'.h264')
+    # Move file to folder, requires import shutil
+    # Using os.path.join instead
+    # shutil.move(('/home/pi/'+datestring+'.h264'), '/home/pi/ShareBoxVideos/'+datestring+'.h264')
 
 particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
