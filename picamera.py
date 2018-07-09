@@ -29,7 +29,7 @@ def takeVideo(eventData):
     camera.close()
     
     # Sync with GoogleDrive
-    os.system("rclone sync /home/pi/ShareBoxVideos sbTest:folder")
+    os.system("rclone sync /home/pi/ShareBoxVideos sbTest:folder", shell=True)
 
 particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
