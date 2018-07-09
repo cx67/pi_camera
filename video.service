@@ -1,0 +1,15 @@
+[Unit]
+Description=My Video Service
+After=network-online.target multi-user.target
+Wants=network-online.target multi-user.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /home/pi/takeVideo.py
+Restart = always
+StandardOutput=journal
+WorkingDirectory=/home/pi
+
+[Install]
+WantedBy=multi-user.target
