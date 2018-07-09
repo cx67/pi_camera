@@ -12,9 +12,10 @@ def takeVideo(eventData):
     datestring = date1.strftime("%m-%d-%Y-%H%M%S")
 
     #make file
-    data_folder = os.path.join("home", "pi","ShareBoxVideos")
-    my_file = open(data_folder+datestring+'.h264', 'wb')
-
+    dirString = os.getcwd()
+    data_folder = os.path.join(dirString,"ShareBoxVideos",datestring)
+    my_file = open(data_folder+'.h264', 'wb')
+    
     #take video
     camera = picamera.PiCamera()
     camera.resolution = (640, 480)
