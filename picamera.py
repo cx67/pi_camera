@@ -15,6 +15,7 @@ def takeVideo(eventData):
     dirString = os.getcwd()
     data_folder = os.path.join(dirString,"ShareBoxVideos",datestring)
     my_file = open(data_folder+'.h264', 'wb')
+    #testx	
     
     #take video
     camera = picamera.PiCamera()
