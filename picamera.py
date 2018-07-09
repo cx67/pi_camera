@@ -28,9 +28,8 @@ def takeVideo(eventData):
     my_file.close()
     camera.close()
     
-    # Move file to folder, requires import shutil
-    # Using os.path.join instead
-    # shutil.move(('/home/pi/'+datestring+'.h264'), '/home/pi/ShareBoxVideos/'+datestring+'.h264')
+    # Sync with GoogleDrive
+    os.system("rclone sync /home/pi/ShareBoxVideos sbTest:folder")
 
 particle_cloud.quit.subscribe("doorOpen",(takeVideo))
 
