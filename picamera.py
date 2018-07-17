@@ -9,9 +9,10 @@ access_token = "7194c612c12123160921e81ebdd7c36fd6bc2460"
 particle_cloud = ParticleCloud(access_token)
 
 # LED settings
+chan_list = [19,37]
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(19, GPIO.OUT)
+GPIO.setup(chan_list, GPIO.OUT)
 
 def takeVideo(eventData):
     #date to string
@@ -24,7 +25,7 @@ def takeVideo(eventData):
     my_file = open(data_folder+'.h264', 'wb')
     
     # turn on light
-    GPIO.output(19, True)
+    GPIO.output(chan_list, True)
     
     #take video
     camera = picamera.PiCamera()
@@ -39,7 +40,7 @@ def takeVideo(eventData):
     camera.close()
     
     # turn off light
-     GPIO.output(19, False)
+     GPIO.output(chan_list, False)
     
     # Sync with GoogleDrive
     # make sure to copy rclone.config file to root folder if running service as root 
